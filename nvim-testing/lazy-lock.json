@@ -1,0 +1,6 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "db067881fff0fd4be8c00e5bde7492e0e1c77a2f" },
+  "nvim-web-devicons": { "branch": "master", "commit": "b8221e42cf7287c4dcde81f232f58d7b947c210d" },
+  "oil.nvim": { "branch": "master", "commit": "7e1cd7703ff2924d7038476dcbc04b950203b902" },
+  "vague.nvim": { "branch": "main", "commit": "1c3ab300c638163c08ebb144969b55f3c1fff346" }
+}

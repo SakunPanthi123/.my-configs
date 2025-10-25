@@ -10,9 +10,8 @@ return {
 			["<C-p>"] = {},
 			["<C-n>"] = {},
 			["<C-j>"] = { "select_next" },
-			["<C-k>"] = { "select_prev" },
+			["<C-k>"] = { "select_prev"},
 			["<C-e>"] = { "hide" },
-			["<C-c>"] = { "hide" },
 		},
 
 		appearance = {

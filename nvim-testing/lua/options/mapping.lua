@@ -13,6 +13,7 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- remaping the esc to jk or kj
 vim.keymap.set("i", "kj", "<ESC>", { desc = "Exit the insert mode" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit the insert mode" })
+
 -- mapping the system clipboard
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to the system clipboard (normal mode)" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy to the system clipboard (normal mode)" })
@@ -55,7 +56,7 @@ vim.keymap.set("n", "<C-q>", "<CMD>bd<CR>", { desc = "Close the buffer/tab" })
 vim.keymap.set("n", "<C-h>", "<CMD>bp<CR>", { desc = "Move to previous buffer/tab" })
 vim.keymap.set("n", "<C-l>", "<CMD>bn<CR>", { desc = "Move to previous buffer/tab" })
 
-vim.keymap.set("n", "<C-k>", function()
+vim.keymap.set("n", "<C-i>", function()
 	local col = vim.fn.col(".")
 	local line = vim.fn.getline(".")
 	local next_char = line:sub(col + 1, col + 1)

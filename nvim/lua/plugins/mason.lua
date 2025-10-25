@@ -34,8 +34,7 @@ return {
       automatic_installation = true,
       handlers = {
         function(server_name)
-          local lspconfig = require("lspconfig")
-          lspconfig[server_name].setup({ capabilities = capabilities });
+          vim.lsp. config({ capabilities = capabilities });
         end,
       }
     })

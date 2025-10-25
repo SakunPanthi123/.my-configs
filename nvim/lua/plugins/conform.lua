@@ -19,7 +19,7 @@ return {
 				},
 			},
 			formatters_by_ft = {
-				lua = { "stylua" },
+				lua = { "lua-format" },
 				typescriptreact = ts_js_eco,
 				javascriptreact = ts_js_eco,
 				javascript = ts_js_eco,
@@ -31,7 +31,7 @@ return {
 			lsp_fallback = true,
 		})
 
-		vim.keymap.set("n", "<c-f>", function()
+		vim.keymap.set("n", "<C-f>", function()
 			print("Formatting the file")
 			local bufid = vim.api.nvim_get_current_buf()
 			conform.format({ bufnr = bufid }, function(err, did_edit)
@@ -40,7 +40,7 @@ return {
 				end
 
 				if did_edit then
-					print("File formatted successfully")
+					print("File formatted successfully!!")
 				else
 					print("Noting to be formatted!!")
 				end
