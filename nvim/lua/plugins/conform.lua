@@ -19,7 +19,7 @@ return {
 				},
 			},
 			formatters_by_ft = {
-				lua = { "lua-format" },
+				lua = { "stylua" },
 				typescriptreact = ts_js_eco,
 				javascriptreact = ts_js_eco,
 				javascript = ts_js_eco,

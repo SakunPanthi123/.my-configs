@@ -1,6 +1,6 @@
 -- mapping the vim diagnonistics
 vim.keymap.set("n", "<leader>d", function()
-	vim.diagnostic.config({ float = { border = "single" } })
+	vim.diagnostic.config({ float = { border = "single", underline=true } })
 	vim.diagnostic.open_float()
 end, { desc = "Opens the error diagnostic float" })
 
