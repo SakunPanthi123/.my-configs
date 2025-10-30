@@ -7,26 +7,39 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- setting up auto command to close all empty buffers when entering a new buffer
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    -- Get a list of all listed buffers
-    local listed_buffers = vim.tbl_filter(function(bufnr)
-      return vim.api.nvim_buf_get_option(bufnr, "buflisted")
-    end, vim.api.nvim_list_bufs())
 
-    -- Iterate through listed buffers
-    for _, bufnr in ipairs(listed_buffers) do
-      -- Check if the buffer is empty and not the current buffer
-      if vim.api.nvim_buf_line_count(bufnr) == 1 and
-         vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] == "" and
-         bufnr ~= vim.api.nvim_get_current_buf() then
-        -- Delete the empty buffer
-        pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
-      end
+
+-- rememebr scroll feature
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    local line = vim.fn.line
+    if line([['"]]) > 0 and line([['"]]) <= line("$") then
+      vim.cmd('normal! g`"')
     end
   end,
 })
+
+-- setting up auto command to close all empty buffers when entering a new buffer
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+--     -- Get a list of all listed buffers
+--     local listed_buffers = vim.tbl_filter(function(bufnr)
+--       return vim.api.nvim_buf_get_option(bufnr, "buflisted")
+--     end, vim.api.nvim_list_bufs())
+--
+--     -- Iterate through listed buffers
+--     for _, bufnr in ipairs(listed_buffers) do
+--       -- Check if the buffer is empty and not the current buffer
+--       if vim.api.nvim_buf_line_count(bufnr) == 1 and
+--          vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] == "" and
+--          bufnr ~= vim.api.nvim_get_current_buf() then
+--         -- Delete the empty buffer
+--         pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
+--       end
+--     end
+--   end,
+-- })
 
 -- These are the auto commands that after
 -- the lspattaches and provide some good shortcuts and keymaps

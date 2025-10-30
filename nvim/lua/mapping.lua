@@ -20,26 +20,26 @@ vim.keymap.set("x", "<leader>y", '"+y', { desc = "Copy to the system clipboard (
 vim.keymap.set("x", "<leader>Y", '"+Y', { desc = "Copy to the system clipboard (visual mode)" })
 
 -- save file mapping
-vim.keymap.set("n", "<C-s>", function()
-	local bufid = vim.api.nvim_get_current_buf()
-	print("Formatting before saving...")
-
-	-- Call conform.format and wait for it to finish
-	require("conform").format({ bufnr = bufid }, function(err, did_edit)
-		if err then
-			vim.cmd("w")
-			print("Error while formatting: " .. err, "Saved anyhow!")
-		end
-
-		if did_edit then
-			vim.cmd("w")
-			print("File formatted and saved successfully!!")
-		elseif not err and not did_edit then
-			vim.cmd("w")
-			print("Nothing to format, saved!!")
-		end
-	end)
-end, { desc = "Format and save the current file" })
+-- vim.keymap.set("n", "<C-s>", function()
+-- 	local bufid = vim.api.nvim_get_current_buf()
+-- 	print("Formatting before saving...")
+--
+-- 	-- Call conform.format and wait for it to finish
+-- 	require("conform").format({ bufnr = bufid }, function(err, did_edit)
+-- 		if err then
+-- 			vim.cmd("w")
+-- 			print("Error while formatting: " .. err, "Saved anyhow!")
+-- 		end
+--
+-- 		if did_edit then
+-- 			vim.cmd("w")
+-- 			print("File formatted and saved successfully!!")
+-- 		elseif not err and not did_edit then
+-- 			vim.cmd("w")
+-- 			print("Nothing to format, saved!!")
+-- 		end
+-- 	end)
+-- end, { desc = "Format and save the current file" })
 
 --- shift h and shift l for half page up and down navigation
 vim.keymap.set("n", "H", "<C-u>zz", { desc = "Half page up and center" })
@@ -49,9 +49,9 @@ vim.keymap.set("x", "H", "<C-u>zz", { desc = "Half page up and center" })
 vim.keymap.set("x", "L", "<C-d>zz", { desc = "Half page down and center" })
 
 --- close buffer / tab with <C-w> and move to previous buffer with <C-h> and next buffer with <C-l>
-vim.keymap.set({ "n", "i" }, "<C-q>", "<CMD>bd<CR>", { desc = "Close the buffer/tab" })
-vim.keymap.set({ "n", "i" }, "<C-h>", "<CMD>bp<CR>", { desc = "Move to previous buffer/tab" })
-vim.keymap.set({ "n", "i" }, "<C-l>", "<CMD>bn<CR>", { desc = "Move to previous buffer/tab" })
+-- vim.keymap.set({ "n", "i" }, "<C-q>", "<CMD>bd<CR>", { desc = "Close the buffer/tab" })
+-- vim.keymap.set({ "n", "i" }, "<C-h>", "<CMD>bp<CR>", { desc = "Move to previous buffer/tab" })
+-- vim.keymap.set({ "n", "i" }, "<C-l>", "<CMD>bn<CR>", { desc = "Move to previous buffer/tab" })
 
 vim.keymap.set("n", "<C-k>", function()
 	local col = vim.fn.col(".")

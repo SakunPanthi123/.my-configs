@@ -20,7 +20,7 @@ return {
       lua_ls = {},
       ts_ls = {},
       emmet_ls = {},
-      tailwindcss = {},
+      -- tailwindcss = {},
       cssls = {},
       bashls = {},
       -- jqls = {}, -- Not available in Mason registry

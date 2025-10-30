@@ -46,3 +46,10 @@ vim.opt.foldopen:remove("block")
 
 -- Disabling the warning
 vim.opt.shortmess:append('F')
+
+vim.o.winborder = 'single'
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "red" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "yellow" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "cyan" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "blue" })
+

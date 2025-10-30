@@ -1,0 +1,6 @@
+background = #1e1e2d
+window-decoration = none 
+cursor-style = block
+shell-integration-features = no-cursor
+font-family = JetBrainsMono NFM Regular 
+font-size = 19

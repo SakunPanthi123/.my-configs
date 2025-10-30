@@ -1,7 +1,7 @@
-require("behaviors.mapping")
+require(".mapping")
 require(".lazy")
-require("behaviors.settings")
+require("settings")
 
-require("cmds.auto")
-require("cmds.keyboard")
+require(".autocmd")
+require(".keyboard")
 
