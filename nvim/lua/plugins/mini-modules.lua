@@ -34,15 +34,6 @@ return {
 						{ hl = "MiniStatuslineDevinfo", strings = { lineinfo } },
 					})
 				end,
-				-- inactive = function()
-				-- 	local ok_file, filename = pcall(MiniStatusline.section_filename)
-				-- 	if not ok_file then
-				-- 		filename = ""
-				-- 	end
-				-- 	return MiniStatusline.combine_groups({
-				-- 		{ hl = "MiniStatuslineInactive", strings = { filename } },
-				-- 	})
-				-- end,
 			},
 		})
 	end,

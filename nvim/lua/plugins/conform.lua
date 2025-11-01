@@ -42,7 +42,7 @@ return {
 				if did_edit then
 					print("File formatted successfully!!")
 				else
-					print("Noting to be formatted!!")
+					print("Nothing to be formatted!!")
 				end
 			end)
 		end, { desc = "Format the current file" })

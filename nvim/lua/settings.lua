@@ -5,7 +5,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
--- come here to turn off the defualt mode indicator
+
+-- Come here to turn off the defualt mode indicator
 vim.opt.showmode = false
 
 vim.opt.smartindent = true
@@ -47,7 +48,10 @@ vim.opt.foldopen:remove("block")
 -- Disabling the warning
 vim.opt.shortmess:append('F')
 
-vim.o.winborder = 'single'
+-- Single surrounding border for diagnostics and stuff
+vim.o.winborder = 'rounded'
+
+-- Hightlights, undercurl and color setup
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "red" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "yellow" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "cyan" })

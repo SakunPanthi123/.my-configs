@@ -1,7 +1,7 @@
-require(".mapping")
+require(".simple_mappings")
 require(".lazy")
 require("settings")
 
 require(".autocmd")
-require(".keyboard")
+require(".detailed_mappings")
 

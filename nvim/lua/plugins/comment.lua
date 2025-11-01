@@ -8,13 +8,10 @@ return {
 				block = "sb",
 			},
 			toggler = {
-				line = "sc",
 				block = "sb",
 			},
 			extra = {
-				above = "<leader>gk",
 				below = "<leader>gj",
-				eol = "<leader>gl",
 			},
 			mappings = {
 				extra = true,

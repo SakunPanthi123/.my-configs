@@ -7,11 +7,8 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<C-p>"] = {},
-			["<C-n>"] = {},
 			["<C-j>"] = { "select_next" },
 			["<C-k>"] = { "select_prev"},
-			["<C-e>"] = { "hide" },
 		},
 
 		appearance = {

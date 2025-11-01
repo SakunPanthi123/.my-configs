@@ -1,50 +1,17 @@
--- highlight yanking
+-- Highlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "highlight when yanking text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
 	callback = function()
 		vim.hl.on_yank()
 	end,
 })
 
+-- Command that triggers on buffer enter to disable auto new line comments
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
-
--- rememebr scroll feature
-vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    local line = vim.fn.line
-    if line([['"]]) > 0 and line([['"]]) <= line("$") then
-      vim.cmd('normal! g`"')
-    end
-  end,
-})
-
--- setting up auto command to close all empty buffers when entering a new buffer
--- vim.api.nvim_create_autocmd("BufEnter", {
---   callback = function()
---     -- Get a list of all listed buffers
---     local listed_buffers = vim.tbl_filter(function(bufnr)
---       return vim.api.nvim_buf_get_option(bufnr, "buflisted")
---     end, vim.api.nvim_list_bufs())
---
---     -- Iterate through listed buffers
---     for _, bufnr in ipairs(listed_buffers) do
---       -- Check if the buffer is empty and not the current buffer
---       if vim.api.nvim_buf_line_count(bufnr) == 1 and
---          vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1] == "" and
---          bufnr ~= vim.api.nvim_get_current_buf() then
---         -- Delete the empty buffer
---         pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
---       end
---     end
---   end,
--- })
-
--- These are the auto commands that after
--- the lspattaches and provide some good shortcuts and keymaps
--- for making the editing experience great again
--- And offcourse starting the completion engine
+-- Auto commands register after LSP attaches to the buffer
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 	callback = function(event)
@@ -54,10 +21,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 		map("<leader>gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-		map("<leader>gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-		map("<leader>td", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-		map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-		map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 		map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 		map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 		map("K", vim.lsp.buf.hover, "Hover Documentation")
