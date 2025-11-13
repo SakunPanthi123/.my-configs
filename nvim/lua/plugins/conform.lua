@@ -27,6 +27,7 @@ return {
 				svelte = ts_js_eco,
 				json = { "jq" },
 				python = { "black" },
+        c = {"clang-format"}
 			},
 			lsp_fallback = true,
 		})

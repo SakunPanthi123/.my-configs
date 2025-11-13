@@ -57,3 +57,12 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "yell
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "cyan" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "blue" })
 
+-- Backgorund transparent
+-- Set the background of the main editing window to transparent
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+-- Set the background of floating windows (like those used by plugins) to transparent
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+-- Set the background of the border around floating windows to transparent
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+-- Set the background of the popup menu (e.g., for autocompletion) to transparent
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
