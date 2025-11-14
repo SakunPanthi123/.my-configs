@@ -1,3 +1,6 @@
+local keymap = require(".utils").keymap
+local compile = require(".compile")
+
 -- Mapping the vim diagnonistics
 vim.keymap.set("n", "<leader>d", function()
 	vim.diagnostic.config({ float = { border = "rounded", undercurl=true } }) vim.diagnostic.open_float()
@@ -28,3 +31,11 @@ vim.keymap.set("n", "<C-k>", function()
 	vim.api.nvim_feedkeys("a", "n", false)
 	require("blink.cmp").show()
 end, { desc = "Go to end of word (if not already), then start blink.cmp completion" })
+
+keymap("<M-c>", function()
+	compile.command()
+end, "Opens tmux like compile window at the bottom")
+
+keymap("<M-e>", function()
+	compile.editCmdAndCwd()
+end, "Edit the compile command envs")

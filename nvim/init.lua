@@ -5,3 +5,4 @@ require("settings")
 require(".autocmd")
 require(".detailed_mappings")
 
+require(".compile")
